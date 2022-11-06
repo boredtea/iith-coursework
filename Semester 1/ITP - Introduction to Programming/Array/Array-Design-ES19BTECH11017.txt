@@ -1,0 +1,86 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+Program that uses one-dimensional integer arrays to read
+in two sets of numbers, each having 10 integer numbers. Input array must not have  any 
+duplicate elements.
+Then following functions are developed:
+1) Union of sets
+2) Intersection of sets
+3) Computation: First and second largest element in both union and intersection set.
+
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- if-else statements
+- switch case
+- while loops
+- for loops
+- jump statements
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+  
+* Definition of the functions used in the program (excepting main()):
+  - void input(int array[]):
+    > takes input of an integer array of size 10
+    > doesn't allow user to input duplicate values in the same array
+
+  - void Sort(int array[], int size):
+    > uses bubble sort to sort the array passed to it
+
+  - void Computatuion(int array[], int size):
+    > computes and displays the largest two elements of the array (sorted in descending order) passed to it
+    > uses a switch case to deal with cases where the passed array has less than two elements
+      => size of array is 0: neither maximum exists
+      => size of array is 1: maximum 1 exists but maximum 2 doesn'takes
+      => all other sizes: both maximums exist
+
+  - void Union(int a[], int b[], int unionSet[]):
+    > finds the union of the sets 'a' and 'b' and stores it in unionSet
+      => copies all the contents of set a into unionSet
+      => picks each element of set b one by one and compares it with the first 10 elements of unionSet
+      => if no match is found, adds the current element of set b to unionSet and increments the position variable
+    > sorts unionSet by calling Sort()
+    > displays the sorted union of the sets
+    > calls Computation()
+
+  - void Intersection(int a[], int b[], int intersectionSet[]):
+    > finds the intersection of the sets 'a' and 'b' and stores it in intersectionSet
+      => uses nested for-loops
+      => picks one element of set a and compares it to each element of set b
+      => when a match is found, the element of set a is added to intersectionSet and increments the position variable
+    > sorts intersectionSet by calling Sort()
+    > displays the sorted intersection of the sets
+    > calls Computation()
+
+* Declaration of all the arrays required in the program:
+  - array1[10]
+  - array2[10]
+  - unionSet[20]
+  - intersectionSet[10]
+* calls input() twice and passes sets a and b to it
+* calls Union() and passes sets a, b and unionSet to it
+* calls Intersection() and passes sets a, b and intersectionSet to it
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

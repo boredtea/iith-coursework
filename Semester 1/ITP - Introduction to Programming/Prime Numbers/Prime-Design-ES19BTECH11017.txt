@@ -1,0 +1,64 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A C program that prints the sum of prime digits of a positive number using recursion.
+The number is taken as input from the user. The number given as input must have exactly 10 digits.
+Any number smaller than or greater than 10 digits is an invalid input.
+The program achieves its goal using two functions that use only recursion (excluding main()).
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- if-else statements
+- recursion
+- while loops
+- type casting
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Declaration of global variables
+  - used by the recursive functions
+* Definition of the functions used in the program (excepting main()):
+  - int validity_check(long n):
+    > counts number of digits in number n
+    > successively divides n by 10 to find number of digits using recursion
+    > returns -1 in case of negative integers
+  - int prime_sum(long n):
+    > computes and returns the sum of prime digits in number
+    > n % 10 is used to extract the digit in the unit's place
+    > n / 10 is used to remove the unit's digit and prepare n for the next iteration
+    > cases:
+      => extracted digit is prime: it is added to the sum and function is called agian
+      => extracted digit is composite: the function is called again
+      => n is 0: the sum is returned
+
+* Declaration of all the variables used in the main function
+* Using a while loop to continue taking input until user enters valid input
+* Inside the while loop:
+  - taking input (stored as long data type)
+  - checking if input is exactly 10 digits using validity_check()
+    => if valid: input is passed to prime_sum() and the result is printed
+    => if invalid: an error message is displayed and the 
+                   flag is set to -1 and the while loop keeps taking 
+                   input until valid input is entered
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

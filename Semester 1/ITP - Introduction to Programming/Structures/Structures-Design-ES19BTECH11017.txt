@@ -1,0 +1,104 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+This program makes extensive use of structures and pointers to 
+achieve its goal as described in the following paragraphs.
+
+An automobile company has several characteristics for engine parts: 
+- serial numbers starting from AA0 to FF9
+- date of manufacture 
+- material
+- weight
+
+A structure is created to store information about each engine part. Using
+this information, functions are written to retrieve the following:
+1) List of all the serial numbers of engine parts where weight is more than 5kg.
+2) The year of manufacture of engine parts having serial numbers between 
+   AA2 and BB7(both inclusive).
+3) List of all the details of engine parts where the year of manufacture is within 
+   3 years of 15th Nov 2019.
+
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- structures
+- pointers
+- if-else statements
+- while loops
+- for loops
+- jump statements
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+  - <string.h>: for strcpy()
+* Creating a structure Date for the structure Engine to use
+* Creating a structure Engine to store information about engine parts
+* Definition of the functions used in the program (excepting main()):
+  - int dateValidity(struct Date *date):
+    > checks if the date entered by the user is a valid date
+    > achieves goal using an array which holds maximum number of days in each month
+    > returns -1 in case of invalid date, 0 in case of valid date
+
+  - void input(struct Engine *part, int n):
+    > accepts and stores information about engine parts using the structure Engine
+    > elements of a structure array are passed to the function using pointers
+    > performs error handling according to given constraints using while loops
+      => makes use of dateValidity() to check validity of the date entered
+    
+  - void display(struct Engine *part):
+    > function to display the characteristics of engine parts
+    > used by checkDate()
+
+  - int weightCheck(struct Engine *part):
+    > checks for engine parts with weight greater than 5 kg
+    > prints the serial number of these parts
+    > returns 0 in case weight is less than 5 kg, 1 in other cases
+    
+  - int serialNo(struct Engine *part):
+    > checks for engine parts having serial numbers between 
+      AA2 and BB7(both inclusive)
+    > uses a swith case to check if first two charaters are AA or BB7
+      => uses if statements to see if the serial number is from AA2 to BB7
+    > prints their year of manufacture
+    > returns 1 in case engine part passed to it satisfies the condition, 0 in other cases
+
+  - int checkDate(struct Engine *part):
+    > checks if date of manufacture is within three years of 15th November, 2019
+      => assumes 3 years to be 365 x 3 = 1095 days
+    > prints all details of the engine part if it is
+    > achieves objective by splitting the problem into three cases:
+      => year entered is 2016
+      => year entered lies between 2017 to 2020 (both inclusive)
+      => year entered is 2022
+    > returns 1 in case such a date satisfies the condition, 0 in other cases
+    
+* Start of main()
+* Declaring the variables required
+* Accepting the number of engine parts the user wants to enter details about
+* Creating structure array of Engine with the the specified number of elements
+* Taking input of characteristics of each engine part using input() via a for-loop
+* Calling weightCheck() for eacl element using a for-loop
+* Calling serialNo() for eacl element using a for-loop
+* Calling checkDate() for eacl element using a for-loop
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

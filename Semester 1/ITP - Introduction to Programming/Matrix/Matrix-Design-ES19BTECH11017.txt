@@ -1,0 +1,105 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+This program calculates the product of two matrices
+and the inverse of the product matrix.
+It only accepts matrices such that their product exists.
+
+To calculate inverse of the product matrix,
+functions to calculate the following have been written:
+- cofactor
+- determinant
+- adjoint
+- inverse
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- recursion
+- if-else statements
+- while loops
+- for loops
+- jump statements
+- type casting
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Declaring global variales to handle array sizes throughout the program
+* Definition of the functions used in the program (excepting main()):
+  - void input_order():
+    > makes sure order of the matrices are compatible for multiplication
+    > makes use of a 2x2 matric to do so
+    > the row stores order of the first array and the second of the second
+    > doesn't accept any row or column matrix orders either
+    > keeps taking input until valid input is entered
+
+  - void input(int rows, int columns, int array[rows][columns]):
+    > accepts and stores input of an array of the order rows x columns
+    
+  - void multiplication(int A[a1_x][a1_y], int B[a2_x][a2_y], int C[a1_x][a2_y]):
+    > computes product of A[x][y] with  B[y][z] and stores it in C[x][z]
+    > initialises each element in C to 0 
+    > performs matrix multiplication with the help of three for-loops
+    > prints C in a matrix format
+
+  - void cofactor(int size, int array[size][size], int temp[size][size], int a, int b):
+    > finds and stores cofactor matrix of an element
+    > used to find determinant, adjoint, and inverse
+    > copies all the elements of array[][] into a temporary array sans the elements in row a and column b
+    > uses two for-loops and two if-statements to achieve goal
+    
+  - float determinant(int size, int array[size][size]):
+    > computes and returns determinant of array[][]
+    > uses recursion
+    > defines base case as a single element matrix
+    > for larger matrices:
+      => keeps splitting matrix into sub-matrices using cofactor()
+      => recursively calls itself to arrive at the base case
+      => uses the first row to calculate the final answer
+    > stores determinant as a float
+    > returns final answer
+
+  - void adjoint(int size, int array[size][size], int adjoint[size][size]):
+    > calculates and stores the adjoint of array[][]
+    > used by the inverse function
+    > makes use of cofactor(), determinant() and two for-loops to find transpose of cofactormatrix and store it in a new array 
+    
+  - int inverse(int rows, int columns, int array[rows][columns]):
+    > calculate inverse of array[][]
+    > makes use of cofactor(), determinant(), and adjoint()
+    > returns -1 when:
+      => array[][] is singular
+      => array[][] is not a square matrix
+      => this automatially removes any need of error handling for the above three functions
+    > finds determinant of array[][] using determinant()
+    > divides adjoint of array[][] with the determinant to find and print inverse
+
+* Start of main()
+* calling input_order
+* initialising global variables to handle array sizes
+* declaring required arrays
+* taking input
+* calling multiplication()
+* calling inverse()
+  - printing error message when the function returns -1
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

@@ -1,0 +1,61 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A simple calculator application that is expected to take three inputs: first input as operation
+name (i.e., +, -, *, /), second and third input as two numbers (i.e., number_1 and
+number_2). Then application is expected to calculate and display the operation and result based on
+the selected operation.
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- if-else statements
+- switch case
+- while loops
+- jump statements
+- type casting
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+  - <stdlib.h>: for abs() function
+  - <math.h>: for pow() function
+* Declaration of all the variables used in the program
+* Using a while loop to continue taking input until the user choses otherwise
+* Inside the while loop:
+  - creating label "start": used for retaking input in case the user enters invalid operators
+    > if input is out of range, program directs the user back to the start label
+  - taking operator input (until a non-newline character is encountered) using and checking for its validity
+  - taking input of the two operands and checking if they're within the given range: |number_1 * number_2| <= 10^20
+    > if input is out of range, program directs the user back to the start label
+  - running the 'operator' variable through a switch() statement to determine type of operation
+    > each case prints type of operation and prints the result directly
+    > the '/' (division) case is split into two cases:
+      => number_2 is 0: prints error message
+      => number_2 is not 0: typecasts number_1, number_2 and the final result to double datatype and prints it
+    > exit switch()
+  - creating label "menu": used for asking user if they want to continue giving input
+    > take input of user's choice:
+      => if yes: stay inside while loop and repeat above steps
+      => if no: print thank you message and exit while loop
+      => invalid input: direct user back to choice input using the menu label
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

@@ -1,0 +1,57 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A C program to reverse a string using pointers. Given a string as an input, 
+a function takes the input as a parameter and reverses that string.
+
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- pointers
+- if-else statements
+- while loops
+- for loops
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+  - <string.h>: for strlen() and strcpy()
+* Definition of the functions used in the program (excepting main()):
+  - void reverseString(char str[]):
+    > function to reverse the string passed to it
+    > makes use of two pointers to point to the starting and ending of the string
+    > uses a for-loop to switch positions of two characters at a time
+      => the switching starts from two ends of the word, and ends in the middle
+      => therefore, the for-loop needs to run for half the length of the string
+
+* Start of main()
+* declaring all the variables required by the program
+* start of a while loop to keep taking input unitl valid input is entered:
+  - taking input using fgets()
+  - calling <string.h> function strlen() to find length of the input string
+  - using if-else statements to check if str is not NULL and has a length below 10
+    => if str is invalid: printing error message and taking input again
+    => if str is valid: exiting while loop
+* Calling reverseString()
+* Printing the reversed string
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

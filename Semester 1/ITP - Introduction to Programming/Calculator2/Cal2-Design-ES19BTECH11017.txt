@@ -1,0 +1,96 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A calculator application that is capable ofperforming the following operations:
+- Add
+- Subtract
+- Multiply
+- Divide (output the floor of the result)
+- Modulus (remainder on division)
+- Square
+- Square root (output the floor of the result)
+- Log (base 2) (output the ceil of the result)
+The program makes use of ONLY + and - (add and subtract operations) to implement all of the above
+operations. ‘*’ (multiply), ‘/’ (divide), ‘%’ (modulo) and any function from “math.h” has not 
+been used. Only loops, '+', and '-' have been used to implement all the above functions.
+
+Separate functions have been created for each of the above operations.
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- if-else statements
+- switch case
+- while loops
+- for loops
+- jump statements
+- type casting
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Definition of the functions used in the program (excepting main()):
+  - double add(int a, int b):
+    > computes and returns a + b 
+    > returns -1 in case of input overflow
+  - double subtract(int a, int b):
+    > computes and returns a - b 
+    > returns -1 in case of input overflow
+  - double multiply(int a, int b):
+    > computes and returns a * b
+      => finds the larger and the smaller of the two numbers
+      => runs a for loop using the smaller number as the control variable (increases efficiency)
+      => adds the larger number to itself over and over agian inside the loop 
+    > returns -1 in case of input overflow
+  - double divide(int a, int b):
+    > computes and returns a / b
+      => runs a while loop that adds 'b' to itself every iteration until the sum exceeds 'a'
+      => increments a counter every iteration which is used to find the floor of the quotient
+    > returns -1 in case of input overflow (also handles divide by zero cases)
+  - double modulus(int a, int b):
+    > computes and returns a % b
+      => runs a while loop that adds 'b' to itself every iteration until the sum exceeds 'a'
+      => subtracts the (sum - b) from 'a' to get the remainder
+    > returns -1 in case of input overflow
+  - double square(int a):
+    > computes and returns a * a
+      => passes 'a' to the multiply() function
+    > returns -1 in case of input overflow
+  - double root(int a):
+    > computes and returns sqrt(a)
+      => finds the smallest number whose square is larger than the given number to find the floor of the square root
+    > returns -1 in case of input overflow
+  - double log(int a):
+    > computes and returns log(a) to the base 2
+      => uses a while loop to multiply 2's until the resulting product exceeds 'a' to find ceil of the logarithm
+    > returns -1 in case of input overflow
+
+* Declaration of all the variables used in the program
+* Using a while loop to continue taking input until the user choses otherwise
+* Inside the while loop:
+  - displaying a menu with available operations and taking input of users choice
+  - taking required number of inputs (2 numbers or 1 number) based on the selected operation (using switch case)
+  - using switch() statement to run through all the menu operations and executing the desired one:
+    > passes appropriate values to the required function and displays result
+    > prints an error message in case of invalid input
+    > exit switch()
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

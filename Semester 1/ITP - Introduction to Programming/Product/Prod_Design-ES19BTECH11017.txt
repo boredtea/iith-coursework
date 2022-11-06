@@ -1,0 +1,59 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A program that is expected to output the list of all even positive integers less than or equal to
+N (N is a positive integer) and print their product. The number N is taken as input. In case of any invalid input,
+the program outputs “Error”. 
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- if-else statements
+- while loops
+- type promotion
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Declaration of all the variables used in the program
+  > NOTE: 'product' is declared as long to accomodate the accurate values
+* Using a while loop to continue taking input until the user choses otherwise
+* Inside the while loop:
+  - taking N as input (stored as int datatype) using and checking for its validity
+  - checking multiple cases for N:
+    > if N <= 0 or N > 30: print error message
+    > if N = 1: don't print anything
+    > if N is a valid input within range:
+      => initialising product to 1
+      => initialising current to 2 (the 'current' variable is used to iterate through all the even natural numbers upto N)
+      => enter while loop to iterate through the even natural numbers:
+         + printing the even number stored in current
+         + multiplying the existing product with 'current' ('current' is promoted from datatype int to long)
+         + incrementing 'current' by 2 to get the next even number
+         + exiting while loop when 'current' exceeds 'N'
+      => printing the product
+  - creating label "menu": used for asking user if they want to continue giving input
+    > take input of user's choice:
+      => if yes: stay inside while loop and repeat above steps
+      => if no: print a thank you message and exit while loop
+      => if invalid input: direct user back to choice input using the menu label
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

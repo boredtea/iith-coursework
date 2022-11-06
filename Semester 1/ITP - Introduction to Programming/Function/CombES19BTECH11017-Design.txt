@@ -1,0 +1,58 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+This problem accepts two numbers x and y from the user, and computes their combination value xCy. 
+The program achieves this with the help of two functions:
+● To compute factorial
+● To compute combination
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- for loop
+- while loop
+- if-else statements
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Definition of the functions used in the program (excepting main()):
+  - long long int factorial(int): computes factorial of the number passed to it and returns it as a long long int
+    > computes using a for loop which multiplies all numbers starting from 1 up to the number passed to it
+  - long long int combination(int, int): accepts two parameters returns it as a long long int
+    > if the first number is greater than the second, returns -1
+    > if input is valid, computes combinatioin (using the given formula and calling factorial()) and returns result as long long int data type
+* Declaration of all the variables used in main()
+* Using a while loop to continue taking input until the user choses otherwise
+* Inside the while loop:
+  - taking input of the two numbers to evaluate combination
+  - passing the input to the combination() function (which in turn calls factorial()) an storing the returned value
+  - printing the result:
+    > if combination() returns status as -1, printing error message
+    > otherwise, printing result of the computation
+  - creating label "menu": used for asking user if they want to continue giving input
+    > take input of user's choice:
+      => if yes: stay inside while loop and repeat above steps
+      => if no: print thank you message and exit while loop
+      => invalid input: direct user back to choice input using the menu label
+* Return 0 for main()
+
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

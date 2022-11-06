@@ -1,0 +1,59 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+Hamming distance for a pair of numbers is defined as the number of corresponding bit positions
+where the two numbers are different in their equivalent binary representation.
+The program accepts two numbers and calculates the Hamming distance between them.
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- bitwise operators
+- if-else statements
+- while loops
+- jump statements
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Definition of the functions used in the program (excepting main()):
+  - int hamming(int a, int b):
+    > function to calculate and return hamming distance between two numbers a and b
+    > the binary XOR operator (^) is used to find the positions where two 
+      corresponding bits are different
+    > a while loop is then used to count the number of 1's in 'differences' using
+      the binary AND operator (&)
+      => NOTE: when binary operators are used, the binary representations of 
+         numbers are automatically considered
+    > the hamming distance is then returned
+
+* Start of main()
+* Declaration of all the variables used in the program
+* Using a while loop to continue taking input until the user choses otherwise
+* Inside the while loop:
+  - accepting two numbers as input
+  - passing the input to hamming() to find hamming distance between the two numbers
+  - printing the hamming distance
+  - asking user if they would like to enter input again
+    > uses a while-loop to keep taking menu-input until valid input is entered
+  - exits while loop when user chooses not to continue
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+

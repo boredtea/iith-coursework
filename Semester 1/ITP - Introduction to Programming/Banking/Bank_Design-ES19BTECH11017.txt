@@ -1,0 +1,61 @@
+CONTENTS OF THIS FILE
+---------------------
+   
+ * Purpose
+ * Overall Description
+ * Program Structure
+ * Author
+
+PURPOSE
+-------
+
+A banking application using the switch case and for-loop constructs.
+The first input to the program is a positive integer number N, which represents the
+number of operations a person wants to perform.
+A person can perform one of the following operations on the application:
+● WithdrawAmount
+● AddAmount
+● GetBalance
+Based on the entered operation, the program will print the respective operation name, and
+perform the operation, N number of times.
+
+OVERALL DESCRIPTION
+-------------------
+
+The program uses a combination of the following elements to achieve its goal:
+- switch case
+- for loop
+- if-else statements
+- jump statements
+
+PROGRAM STRUCTURE
+-----------------
+
+* Importing required header files:
+  - <stdio.h>: for standard input/output statements
+* Declaration of all the variables used in the program
+* Asking user how many times they would like to input data
+* Cheching validity of the variable 'N': keep retaking input until valid value is entered
+* Taking input of user's current bank balance
+* Entering the for loop to take 'N' inputs:
+  - taking input of the type of operation the user would like to perform (withdraw, add or print) (stored as a character)
+    > taking input of the amount that is to be added or withdrawn depeding on the operation using a switch case
+    > all other cases: printing error messsage due to no matching operation
+  - using switch case to perform the given operation:
+    > withdraw amount: 
+      => if amount is lesser than curent balance, performing the operation and displaying success message 
+      => other cases: printing error message
+    > add amount: adding the entered amount to the current balance and printing success message
+    > print amount: printing the current balance
+    > exit switch()
+  - repeating all the above steps as long as the for loop keeps iterating
+  - exiting the for loop
+* Return 0 for main()
+
+AUTHOR
+------
+ 
+Soumi Chakraborty
+es19btech11017@iith.ac.in
+
+
