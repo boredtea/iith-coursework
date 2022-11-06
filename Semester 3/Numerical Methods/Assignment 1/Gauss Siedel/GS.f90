@@ -1,0 +1,16 @@
+subroutine GS(A, b, x)
+    
+    implicit none
+    
+    real, dimension(3, 3), intent(in) :: A
+    real, dimension(3), intent(in) :: b
+    real, dimension(3), intent(inout) :: x
+    
+    x(1) = (b(1) - a(1, 2)*x(2) - a(1, 3)*x(3)) / a(1, 1)
+    x(2) = (b(2) - a(2, 1)*x(1) - a(2, 3)*x(3)) / a(2, 2)
+    x(3) = (b(3) - a(3, 1)*x(1) - a(3, 2)*x(2)) / a(3, 3)
+    
+end subroutine GS
+    
+    
+    
